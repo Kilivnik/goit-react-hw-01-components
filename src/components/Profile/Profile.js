@@ -1,31 +1,32 @@
 import user from '../../data/user.json';
 
-export default function Profile() {
+
+export default function Profile({ username, tag, location, avatar, stats }) {
     return (
         <div class="profile">
             <div class="description">
                 <img
-                    src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-                    alt="User avatar"
+                    src={avatar}
+                    alt={username}
                     class="avatar"
                 />
-                <p class="name">Petra Marica</p>
-                <p class="tag">@pmarica</p>
-                <p class="location">Salvador, Brasil</p>
+                <p class="name">{username}</p>
+                <p class="tag">{tag}</p>
+                <p class="location">{location}</p>
             </div>
 
             <ul class="stats">
                 <li>
                     <span class="label">Followers</span>
-                    <span class="quantity">1000</span>
+                    <span class="quantity">{stats.followers}</span>
                 </li>
                 <li>
                     <span class="label">Views</span>
-                    <span class="quantity">2000</span>
+                    <span class="quantity">{stats.views}</span>
                 </li>
                 <li>
                     <span class="label">Likes</span>
-                    <span class="quantity">3000</span>
+                    <span class="quantity">{stats.likes}</span>
                 </li>
             </ul>
         </div>
