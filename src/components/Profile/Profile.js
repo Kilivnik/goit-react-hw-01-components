@@ -1,4 +1,3 @@
-import user from '../../data/user.json';
 
 
 export default function Profile({ username, tag, location, avatar, stats }) {

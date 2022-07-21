@@ -1,4 +1,4 @@
-import value from '../../data/data.json';
+
 
 export default function Statistics() {
     return (
