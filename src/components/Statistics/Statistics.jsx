@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import styles from './Statistics.module.css';
 
 function generateColor() {
   return '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -6,15 +7,15 @@ function generateColor() {
 
 export default function Statistics({ title, stats }) {
     return (
-        <section>
-            {title && <h2 className={stats.title}>{title}</h2>}
-            <ul>
+        <section className={styles.statistics}>
+            {title && <h2 className={styles.title}>{title}</h2>}
+            <ul className={styles.stat_list}>
                 {stats.map(stat => (
                     <li key={stat.id}
                         style={{ backgroundColor: generateColor() }}
                     >
-                        <span>{stat.label}</span>
-                        <span>{stat.percentage}%</span>
+                        <span className={styles.label}>{stat.label}</span>
+                        <span className={styles.percentage}>{stat.percentage}%</span>
                     </li>
                     
                 )
